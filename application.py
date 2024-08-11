@@ -38,7 +38,7 @@ def predict_datapoint():
 
     except Exception as e:
         logging.error(f"Error during prediction: {e}")
-        return "Internal Server Error", 500
-
+        return render_template('form.html', error_message=f"An error occurred: {e}")
+        
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
